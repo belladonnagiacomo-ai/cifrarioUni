@@ -4,13 +4,16 @@
     {
         static void Cifrario(char[] alfabeto, string frase, string parola)
         {
+            string[] fraseSenzaSpazi;
+            fraseSenzaSpazi = frase.Split(' ');
+            string fraseS = string.Join(' ');
             char[] f = frase.ToCharArray();
             char[] p = parola.ToCharArray();
             for(int i = 0;  i < f.Length; i++)
             {
                for(int j = 0; j < p.Length; j++)
                {
-                    Console.Write(p[j]);
+                    
                }
             }
         }
