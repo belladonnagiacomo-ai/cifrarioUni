@@ -16,6 +16,8 @@
 
             char[] array = new char[fraseS.Length];
 
+            char[] f = fraseS.ToCharArray();
+
             int j = 0;
 
             Console.WriteLine(fraseS);
@@ -28,7 +30,11 @@
                     j = 0;
                }
                Console.Write(array[i]);
+
+
             }
+
+
 
         }
         static void Main(string[] args)
