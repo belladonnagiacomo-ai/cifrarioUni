@@ -5,17 +5,31 @@
         static void Cifrario(char[] alfabeto, string frase, string parola)
         {
             string[] fraseSenzaSpazi;
+
             fraseSenzaSpazi = frase.Split(' ');
-            string fraseS = string.Join(' ');
-            char[] f = frase.ToCharArray();
+
+            string fraseS = string.Join("",fraseSenzaSpazi);
+
+            fraseS = fraseS.ToLower();  
+
             char[] p = parola.ToCharArray();
-            for(int i = 0;  i < f.Length; i++)
+
+            char[] array = new char[fraseS.Length];
+
+            int j = 0;
+
+            Console.WriteLine(fraseS);
+            for(int i = 0;  i < array.Length; i++)
             {
-               for(int j = 0; j < p.Length; j++)
+                array[i] = parola[j];
+                j++;
+               if(j == p.Length)
                {
-                    
+                    j = 0;
                }
+               Console.Write(array[i]);
             }
+
         }
         static void Main(string[] args)
         {
