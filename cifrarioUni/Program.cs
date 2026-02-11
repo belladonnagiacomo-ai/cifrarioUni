@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Cifrario(char[] alfabeto, string frase, string parola)
+        static void Cifrario(char[] alfabeto, string frase, string parola, string Alfabeto)
         {
             string[] fraseSenzaSpazi;
 
@@ -25,7 +25,7 @@
             {
                 array[i] = parola[j];
                 j++;
-               if(j == p.Length)
+               if(j == parola.Length)
                {
                     j = 0;
                }
@@ -33,18 +33,34 @@
 
 
             }
+            int pos = 0;
+            int pos2 = 0;
+            int somma = 0;
+            string s = "";
+            for(int i = 0; i < f.Length; i++)
+            {
+                pos = Alfabeto.IndexOf(f[i]);
+                pos2 = Alfabeto.IndexOf(array[i]);
 
-
+                somma = pos + pos2;
+                
+                if(somma > 25)
+                {
+                    somma = somma - 25;
+                }
+                s += Alfabeto[somma]; 
+            }
 
         }
         static void Main(string[] args)
         {
-            char[] alfabeto = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            string Alfabeto = "abcdefghijklmnopqrstuvwxyz";
+            char[] alfabeto = Alfabeto.ToCharArray();
             Console.WriteLine("Dammi una frase ");
             string frase = Console.ReadLine();
             Console.WriteLine("Dammi una parola ");
             string parola = Console.ReadLine();
-            Cifrario(alfabeto, frase, parola);
+            Cifrario(alfabeto, frase, parola, Alfabeto);
         }
     }
 }
