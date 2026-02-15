@@ -49,8 +49,10 @@
                     somma = somma - 25;
                 }
                 s += Alfabeto[somma]; 
+               
             }
-
+            Console.WriteLine(" ");
+            Console.WriteLine("La parola cifrata e: " + s);
         }
         static void Main(string[] args)
         {
